@@ -6,9 +6,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import Image from 'next/image';
-import image1 from "@/public/images/Section3/1.png";
-import image2 from "@/public/images/Section3/2.png";
-import image3 from "@/public/images/Section3/3.png";
+import image1 from "@/public/images/section3/1.png";
+import image2 from "@/public/images/section3/2.png";
+import image3 from "@/public/images/section3/3.png";
 
 const Section3 = () => {
     const data = [

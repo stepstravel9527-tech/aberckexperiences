@@ -3,7 +3,7 @@
 import styles from './Section6.module.scss';
 import React from 'react';
 import Image from 'next/image';
-import image1 from "@/public/images/Section6/1.png";
+import image1 from "@/public/images/section6/1.png";
 
 const Section6 = () => {
     return (

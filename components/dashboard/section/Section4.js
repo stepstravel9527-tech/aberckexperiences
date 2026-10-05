@@ -6,11 +6,11 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import Image from 'next/image';
-import image1 from "@/public/images/Section4/1.png";
-import image2 from "@/public/images/Section4/2.png";
-import image3 from "@/public/images/Section4/3.png";
-import image4 from "@/public/images/Section4/4.png";
-import image5 from "@/public/images/Section4/5.png";
+import image1 from "@/public/images/section4/1.png";
+import image2 from "@/public/images/section4/2.png";
+import image3 from "@/public/images/section4/3.png";
+import image4 from "@/public/images/section4/4.png";
+import image5 from "@/public/images/section4/5.png";
 
 const Section4 = () => {
     const data = [

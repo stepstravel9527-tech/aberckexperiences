@@ -3,9 +3,9 @@
 import styles from './Section5.module.scss';
 import React from 'react';
 import Image from 'next/image';
-import image1 from "@/public/images/Section5/1.png";
-import image2 from "@/public/images/Section5/2.png";
-import image3 from "@/public/images/Section5/3.png";
+import image1 from "@/public/images/section5/1.png";
+import image2 from "@/public/images/section5/2.png";
+import image3 from "@/public/images/section5/3.png";
 
 const Section5 = () => {
     const imagesData = [
