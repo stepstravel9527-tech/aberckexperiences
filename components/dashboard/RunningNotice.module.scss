@@ -1,0 +1,33 @@
+.runningNotice {
+    display: flex;
+    align-items: center;
+    padding: 1rem 2.4rem;
+    background: var(--color-bg-light);
+    box-shadow: 0 4px 4px 0 rgba(25, 34, 87, 0.10);
+
+    .noticeIcon {
+        display: flex;
+        align-items: center;
+        margin-right: 0.8rem;
+
+        svg {
+            height: 1.6rem;
+            width: 1.6rem;
+        }
+    }
+
+    .noticeContent {
+        display: flex;
+        align-items: center;
+        width: 100%;
+
+        marquee {
+            color: var(--color-dark-blue);
+            font-size: 1.2rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            letter-spacing: -0.25px;
+        }
+    }
+}

@@ -1,0 +1,159 @@
+.section5 {
+    padding: 4rem 2rem;
+    background: #f8f9fa;
+
+    // 主标题
+    .title {
+        text-align: center;
+        font-size: 2.4rem;
+        font-weight: 700;
+        color: #1a1a1a;
+        margin-bottom: 1.5rem;
+        letter-spacing: 2px;
+
+        @media (min-width: 768px) {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+        }
+    }
+
+    // 描述文字
+    .desc {
+        text-align: center;
+        font-size: 1.4rem;
+        color: #666;
+        line-height: 1.6;
+        max-width: 800px;
+        margin: 0 auto 3rem;
+        
+        @media (min-width: 768px) {
+            font-size: 1.6rem;
+            margin-bottom: 4rem;
+        }
+    }
+
+    // 图片容器 - 移动端竖屏排列
+    .imagesContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+
+        // PC端横屏排列
+        @media (min-width: 768px) {
+            flex-direction: row;
+            gap: 2rem;
+        }
+    }
+
+    // 图片卡片
+    .imageCard {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        border-radius: 1rem;
+        overflow: hidden;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            
+            .overlay {
+                background: rgba(0, 0, 0, 0.5);
+            }
+            
+            .imageTitle,
+            .imageDesc {
+                transform: translateY(0);
+            }
+        }
+
+        .image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        // 渐变遮罩层
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1));
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        // 文字悬浮层
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            z-index: 2;
+            padding: 1.5rem;
+            transition: background 0.3s ease;
+
+            .imageTitle {
+                color: white;
+                font-size: 1.8rem;
+                font-weight: 700;
+                margin-bottom: 0.5rem;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                transform: translateY(0);
+                transition: transform 0.3s ease;
+
+                @media (min-width: 768px) {
+                    font-size: 2rem;
+                }
+            }
+
+            .imageDesc {
+                color: rgba(255, 255, 255, 0.9);
+                font-size: 1.2rem;
+                font-weight: 400;
+                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+                transform: translateY(0);
+                transition: transform 0.3s ease 0.05s;
+
+                @media (min-width: 768px) {
+                    font-size: 1.4rem;
+                }
+            }
+        }
+
+        // PC端悬停效果
+        @media (min-width: 768px) {
+            .imageTitle,
+            .imageDesc {
+                transform: translateY(10px);
+            }
+            
+            &:hover {
+                .imageTitle,
+                .imageDesc {
+                    transform: translateY(0);
+                }
+            }
+        }
+    }
+}
+
+// 移动端适配
+@media (max-width: 768px) {
+    .section5 {
+        padding: 3rem 1.5rem;
+    }
+}

@@ -1,0 +1,44 @@
+// components/PrimaryButton.module.scss
+.primaryButton {
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: var(--space-3) var(--space-4);
+    background: var(--color-button-primary);
+    color: #fff;
+    border-radius: var(--radius-sm);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    // 正常状态悬停效果
+    &:hover {
+        opacity: 0.8;
+    }
+
+    // 禁用和加载状态
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+}
+
+// 假按钮（完全不可点击）
+.fakeButton {
+    @extend .primaryButton;
+    background: var(--color-button-secondary);
+    cursor: not-allowed;
+    opacity: 0.4;
+    
+    &:hover {
+        opacity: 0.4;
+    }
+}

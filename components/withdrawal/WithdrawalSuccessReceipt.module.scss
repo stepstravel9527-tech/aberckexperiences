@@ -1,0 +1,281 @@
+.receiptOverlay {
+    max-width: 768px;
+    height: 100%;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.65);
+    z-index: 12;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    
+    // PC端适配
+    @media (min-width: 768px) {
+        background: rgba(0, 0, 0, 0.8); // 加深背景遮罩
+    }
+}
+
+.receiptContainer {
+    width: 95%;
+    background: white;
+    border-radius: 0.4rem;
+    padding: 2rem;
+    animation: fadeIn 0.5s linear forwards;
+    position: relative;
+    
+    // PC端适配
+    @media (min-width: 768px) {
+        width: 600px; // 固定宽度
+        max-width: 90%; // 保持响应式
+        padding: 3rem; // 增加内边距
+        border-radius: 1rem; // 增大圆角
+    }
+}
+
+.watermark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    // PC端适配
+    @media (min-width: 768px) {
+        img {
+            width: 15rem; // 增大水印尺寸
+        }
+    }
+
+    img {
+        height: auto;
+        width: 12rem;
+        opacity: 0.1;
+    }
+}
+
+.successIcon {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    
+    // PC端适配
+    @media (min-width: 768px) {
+        margin-bottom: 2rem; // 增加底部间距
+    }
+
+    i {
+        font-size: 5rem;
+        color: #4CAF50;
+        
+        // PC端适配
+        @media (min-width: 768px) {
+            font-size: 6rem; // 增大成功图标
+        }
+    }
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    
+    // PC端适配
+    @media (min-width: 768px) {
+        margin-bottom: 2rem; // 增加底部间距
+    }
+
+    h1 {
+        font-size: 1.6rem;
+        color: var(--color-text-primary);
+        margin-bottom: 1rem;
+        
+        // PC端适配
+        @media (min-width: 768px) {
+            font-size: 2rem; // 增大标题字体
+            margin-bottom: 1.2rem; // 增加底部间距
+        }
+    }
+
+    p {
+        font-size: 1.3rem;
+        color: var(--color-text-secondary);
+        word-wrap: break-word;
+        line-height: 1.4;
+        
+        // PC端适配
+        @media (min-width: 768px) {
+            font-size: 1.5rem; // 增大描述字体
+            line-height: 1.5; // 优化行高
+        }
+    }
+}
+
+.divider {
+    border: var(--border-dashed);
+    width: 100%;
+    margin: 2rem 0;
+    
+    // PC端适配
+    @media (min-width: 768px) {
+        margin: 2.5rem 0; // 增加分隔线间距
+    }
+}
+
+.details {
+    margin-top: 1.5rem;
+    
+    // PC端适配
+    @media (min-width: 768px) {
+        margin-top: 2rem; // 增加顶部间距
+    }
+}
+
+.detailsList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.detailItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0;
+    
+    // PC端适配
+    @media (min-width: 768px) {
+        margin: 1.2rem 0; // 增加列表项间距
+    }
+}
+
+.label {
+    font-size: 1.2rem;
+    color: var(--color-text-secondary);
+    
+    // PC端适配
+    @media (min-width: 768px) {
+        font-size: 1.4rem; // 增大标签字体
+    }
+}
+
+.value {
+    font-size: 1.2rem;
+    color: var(--color-text-primary);
+    font-weight: 500;
+    
+    // PC端适配
+    @media (min-width: 768px) {
+        font-size: 1.4rem; // 增大数值字体
+    }
+}
+
+.channel,
+.status {
+    .value {
+        font-size: 0.8rem;
+        color: white;
+        padding: 0.4rem 0.6rem;
+        border-radius: 0.4rem;
+        
+        // PC端适配
+        @media (min-width: 768px) {
+            font-size: 1rem; // 增大状态字体
+            padding: 0.5rem 0.8rem; // 增加内边距
+            border-radius: 0.5rem; // 增大圆角
+        }
+    }
+}
+
+.channel .value {
+    background: var(--color-error);
+}
+
+.status .value {
+    background: var(--color-success)
+}
+
+.actionButtons {
+    display: flex;
+    gap: 1rem;
+    margin: 1.5rem 0;
+    
+    // PC端适配
+    @media (min-width: 768px) {
+        gap: 1.5rem; // 增加按钮间距
+        margin: 2rem 0; // 增加按钮区域间距
+    }
+}
+
+.positiveButton,
+.negativeButton {
+    flex: 1;
+    font-size: 1.1rem;
+    outline: none;
+    border: none;
+    border-radius: 0.4rem;
+    padding: 0.5rem 0;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    
+    // PC端适配
+    @media (min-width: 768px) {
+        font-size: 1.3rem; // 增大按钮字体
+        padding: 0.8rem 0; // 增加按钮内边距
+        border-radius: 0.6rem; // 增大按钮圆角
+    }
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.positiveButton {
+    background: var(--color-button-primary);
+    border: var(--border-solid-primary);
+    color: white;
+}
+
+.negativeButton {
+    background: #00245d25;
+    border: var(--border-solid-black);
+    color: var(--color-text-primary);
+}
+
+.liveChatPrompt {
+    margin: 1rem 0 0 0;
+    text-align: center;
+    
+    // PC端适配
+    @media (min-width: 768px) {
+        margin: 1.5rem 0 0 0; // 增加顶部间距
+    }
+
+    span {
+        font-size: 1rem;
+        color: rgb(0, 71, 193);
+        font-weight: 500;
+        cursor: pointer;
+        transition: color 0.2s ease;
+        
+        // PC端适配
+        @media (min-width: 768px) {
+            font-size: 1.2rem; // 增大聊天提示字体
+        }
+
+        &:hover {
+            color: black;
+        }
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

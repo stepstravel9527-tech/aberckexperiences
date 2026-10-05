@@ -1,0 +1,123 @@
+.progressContainer {
+    width: 100%;
+    margin-top: 2.4rem;
+    
+    // PC端适配
+    @media (min-width: 768px) {
+        margin-top: 3rem; // 增加顶部间距
+    }
+}
+
+.progressTitle {
+    color: var(--color-gray);
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+    
+    // PC端适配
+    @media (min-width: 768px) {
+        font-size: 1.4rem; // 增大标题字体
+        margin-bottom: 0.6rem; // 增加底部间距
+    }
+}
+
+.progressInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.4rem;
+    
+    // PC端适配
+    @media (min-width: 768px) {
+        margin-bottom: 0.6rem; // 增加底部间距
+    }
+}
+
+.progressPercentage {
+    font-weight: bold;
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 2.8rem;
+    color: var(--color-text-primary);
+    
+    // PC端适配
+    @media (min-width: 768px) {
+        font-size: 1.8rem; // 增大百分比字体
+    }
+}
+
+.progressQuantity {
+    display: flex;
+    align-items: center;
+    height: 2rem;
+    
+    // PC端适配
+    @media (min-width: 768px) {
+        height: 2.2rem; // 增加高度
+    }
+
+    svg {
+        width: 1.2rem;
+        height: 1.2rem;
+        margin-right: 0.25rem;
+        
+        // PC端适配
+        @media (min-width: 768px) {
+            width: 1.4rem; // 增大图标尺寸
+            height: 1.4rem;
+            margin-right: 0.4rem; // 增加右边距
+        }
+    }
+
+    span {
+        color: var(--color-text-secondary);
+        font-size: 1.2rem;
+        font-weight: 400;
+        
+        // PC端适配
+        @media (min-width: 768px) {
+            font-size: 1.4rem; // 增大数量字体
+        }
+    }
+}
+
+.progressBarBackground {
+    position: relative;
+    width: 100%;
+    background-color: #F1F1F1;
+    height: 0.8rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    
+    // PC端适配
+    @media (min-width: 768px) {
+        height: 1rem; // 增加进度条高度
+        border-radius: 0.6rem; // 增大圆角
+    }
+}
+
+.progressBar {
+    position: absolute;
+    background-color: var(--color-button-primary);
+    height: 100%;
+    transition: width 0.2s ease-in-out;
+    border-radius: 0.5rem;
+    
+    // PC端适配
+    @media (min-width: 768px) {
+        border-radius: 0.6rem; // 增大圆角
+    }
+}
+
+.progressBar1 {
+    position: absolute;
+    background-color: #5d8dbd;
+    height: 100%;
+    transition: width 0.2s ease-in-out;
+    border-radius: 0.5rem;
+    
+    // PC端适配
+    @media (min-width: 768px) {
+        border-radius: 0.6rem; // 增大圆角
+    }
+}

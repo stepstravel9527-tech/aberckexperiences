@@ -1,0 +1,140 @@
+.navigationBar {
+    width: 100%;
+    padding: 1.6rem 2.4rem;
+
+    @media (min-width: 768px) {
+        padding: 1.6rem 2.4rem;
+    }
+}
+
+.navigationContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    height: 3.2rem;
+    gap: 1rem;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        height: 4rem; // 增加导航栏高度
+        gap: 1.5rem; // 增加元素间距
+    }
+
+}
+
+// 左中右区域通用样式 - 默认居中
+.leftSection,
+.centerSection,
+.rightSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+// 中间区域：居中对齐
+.centerSection {
+    flex: 1;
+}
+
+// 页面标题样式
+.pageTitle {
+    color: var(--color-text-primary);
+    font-size: 2rem;
+    font-weight: 600;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        font-size: 2.4rem; // 增大标题字体
+    }
+}
+
+// 自定义中间内容容器
+.centerContent {
+    .icon {
+        height: 3.2rem;
+        width: auto;
+
+        // PC端适配
+        @media (min-width: 768px) {
+            height: 4rem; // 增大图标尺寸
+        }
+    }
+}
+
+// 左右操作按钮通用样式
+.leftContent,
+.rightContent {
+    .icon {
+        width: 2.4em;
+        height: auto;
+
+        // PC端适配
+        @media (min-width: 768px) {
+            width: 2.8rem; // 增大图标尺寸
+        }
+    }
+}
+
+// 可点击状态样式
+.isClickable {
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+// 白色主题
+.whiteTheme {
+
+    // 标题颜色
+    .pageTitle {
+        color: #FFFFFF;
+    }
+
+    // 所有图片一起修改
+    .leftContent,
+    .centerContent,
+    .rightContent {
+
+        /* 如果是普通svg代码 */
+        svg path {
+            stroke: #FFFFFF;
+        }
+
+        /* 如果导入的是 SVG，这些样式会生效 */
+        .icon {
+            color: #FFFFFF;
+        }
+
+        .icon path {
+            fill: currentColor;
+        }
+
+        /* 如果导入的是 PNG，使用 filter 改变颜色 */
+        .icon {
+            filter: brightness(0) invert(1);
+        }
+    }
+}
+
+// Dashboard 定制
+.dashboard {
+    .leftSection {
+        .icon {
+            width: 13.3rem;
+            height: auto;
+
+            // PC端适配
+            @media (min-width: 768px) {
+                width: 16rem; // 增大Logo尺寸
+            }
+        }
+    }
+
+    .centerSection {
+        justify-content: flex-end;
+    }
+}

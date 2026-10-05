@@ -1,0 +1,162 @@
+.withdrawalSection {
+    padding: 0rem 2.4rem;
+    width: 100%;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        max-width: 600px;
+        padding: 0; // 居中显示并增加外边距
+    }
+}
+
+.withdrawalCard {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    /* 改为底部对齐 */
+    align-items: flex-start;
+    /* 改为左侧对齐 */
+    height: 16rem;
+    width: auto;
+    background-size: cover;
+    background-position: top center;
+    background-image: url('/images/card_withdrawal.png');
+    padding: 2rem;
+    /* 添加内边距让内容不贴边 */
+
+    // PC端适配
+    @media (min-width: 768px) {
+        height: 20rem; // 增加卡片高度
+        padding: 3rem; // 增加内边距
+        border-radius: 1.2rem; // 添加圆角
+    }
+
+    // 余额标签
+    .balanceLabel {
+        font-size: 1.4rem;
+        color: var(--color-text-primary);
+        font-weight: 500;
+        text-shadow: 0 0 2px rgba(101, 90, 63, 0.40);
+
+        // PC端适配
+        @media (min-width: 768px) {
+            font-size: 1.6rem; // 增大标签字体
+        }
+    }
+
+    // 余额金额
+    .balanceAmount {
+        margin-top: 0.8rem;
+        font-size: 2.4rem;
+        font-weight: 600;
+        color: var(--color-text-secondary);
+        text-shadow: 0 0 2px rgba(101, 90, 63, 0.40);
+
+        // PC端适配
+        @media (min-width: 768px) {
+            font-size: 3rem; // 增大金额字体
+            margin-top: 1rem; // 增加顶部间距
+        }
+
+        .currencySymbol {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-right: 0.4rem;
+
+            // PC端适配
+            @media (min-width: 768px) {
+                font-size: 2.4rem; // 增大货币符号字体
+                margin-right: 0.6rem; // 增加右边距
+            }
+        }
+    }
+}
+
+// 占位符
+.withdrawalInfoPlaceholder {
+    height: 1.4rem;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        height: 1.6rem; // 增加占位符高度
+    }
+}
+
+// 提现信息区域
+.withdrawalInfo {
+    width: 100%;
+    margin-top: 1.5rem;
+    padding: 1.2rem;
+    border-radius: 0.8rem;
+    border: 1px solid rgba(0, 0, 0, 0.80);
+    background: #F8F8F8;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        margin-top: 2rem; // 增加顶部间距
+        padding: 1.6rem; // 增加内边距
+        border-radius: 1rem; // 增大圆角
+    }
+
+    .withdrawalInfoRow {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .withdrawalTitle {
+        font-size: 1.2rem;
+        color: #848484;
+        text-transform: uppercase;
+        font-weight: 600;
+        line-height: 1.5;
+        padding-left: 2.4rem;
+        background-size: contain;
+        background-position: left;
+        background-repeat: no-repeat;
+        background-image: url('/images/journey/icon_commission.png');
+
+        // PC端适配
+        @media (min-width: 768px) {
+            font-size: 1.4rem; // 增大标题字体
+            padding-left: 2.8rem; // 增加左边距
+        }
+    }
+
+    .networkType {
+        font-size: 1.2rem;
+        color: #848484;
+        font-weight: 600;
+        line-height: 1.5;
+
+        // PC端适配
+        @media (min-width: 768px) {
+            font-size: 1.4rem; // 增大标题字体
+        }
+    }
+
+    .userInfo {
+        margin-top: 0.8rem;
+        font-size: 1.4rem;
+        color: #333333;
+        font-weight: 500;
+
+        // PC端适配
+        @media (min-width: 768px) {
+            font-size: 1.6rem; // 增大用户信息字体
+            margin-top: 1rem; // 增加顶部间距
+        }
+    }
+
+    .walletAddress {
+        font-size: 1.4rem;
+        color: #333333;
+        font-weight: 500;
+        word-break: break-all;
+
+        // PC端适配
+        @media (min-width: 768px) {
+            font-size: 1.6rem; // 增大钱包地址字体
+        }
+    }
+}

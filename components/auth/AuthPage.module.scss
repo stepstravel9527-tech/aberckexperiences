@@ -1,0 +1,257 @@
+// components/auth/AuthPage.module.scss
+.authSection {
+    min-height: 100vh;
+    padding-bottom: 0rem;
+
+    background-size: cover;
+    background-position: center;
+    background-image: url('/images/bg_auth.png');
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2.4rem;
+
+    @media (min-width: 768px) {
+        justify-content: flex-start;
+        padding-bottom: 2.4rem;
+    }
+}
+
+.authHeader {
+    padding: 1.6rem 2.4rem;
+
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 0.8rem;
+
+    @media (min-width: 768px) {
+        align-items: center;
+        flex: unset; // PC端移除flex:1
+    }
+}
+
+// Logo 样式
+.logoContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        margin-bottom: 12.5rem;
+        height: auto;
+
+        // PC端适配
+        @media (min-width: 768px) {
+            width: 30rem; // 增大Logo尺寸
+        }
+    }
+}
+
+// 主标题样式
+.title {
+    color: white;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.16);
+    font-size: 2.4rem;
+    font-weight: 500;
+    line-height: 130%;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        font-size: 2.8rem; // 增大主标题字体
+    }
+}
+
+// 副标题样式
+.subTitle {
+    color: white;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.16);
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 150%;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        font-size: 1.8rem; // 增大副标题字体
+    }
+}
+
+// 标签切换样式
+.tabContainer {
+    width: 100%;
+    display: flex;
+    background: var(--color-bg-light);
+    border-radius: 0.8rem;
+    border: var(--border-solid);
+    gap: 0.4rem;
+}
+
+.tabItem {
+    display: flex;
+    flex: 1;
+    padding: 0.8rem 0;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-tertiary);
+    font-size: 1.4rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 0.8rem;
+    transition: all 0.2s ease;
+    cursor: pointer;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        padding: 1rem 0; // 增加内边距
+        font-size: 1.6rem; // 增大标签字体
+    }
+
+    &.tabActive {
+        background: var(--color-button-primary);
+        color: var(--color-text-on-dark);
+        box-shadow: 0px 0px 4px 0px #5E6A84;
+    }
+}
+
+.contentContainer {
+    width: 100%;
+    padding: 3.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background: white;
+    border-radius: 1.6rem 1.6rem 0 0;
+
+    @media (min-width: 768px) {
+        max-width: 600px; // PC端增大最大宽度
+        border-radius: 2rem; // PC端全圆角
+        padding: 4rem; // 增加内边距
+        gap: 2.5rem; // 增加间距
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); // 添加阴影效果
+    }
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        gap: 2.5rem; // 增加表单元素间距
+    }
+}
+
+.formOptions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        font-size: 1.4rem; // 增大选项字体
+    }
+
+    // 忘记密码
+    a {
+        font-size: 1.2rem;
+        font-weight: 400;
+        color: var(--color-link);
+        text-decoration: none;
+        letter-spacing: -0.012rem;
+
+        // PC端适配
+        @media (min-width: 768px) {
+            font-size: 1.4rem; // 增大链接字体
+        }
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.checkboxContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        font-size: 1.4rem; // 增大复选框相关字体
+    }
+}
+
+.checkboxContainer input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.checkmark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.4rem;
+    width: 2.4rem;
+    background-color: white;
+    border: 2px solid #333;
+    border-radius: 5px;
+    margin-right: 12px;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 0;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        height: 2.6rem; // 增大复选框尺寸
+        width: 2.6rem;
+        margin-right: 14px; // 增加右边距
+    }
+}
+
+.checkboxContainer input:checked~.checkmark {
+    background-color: #333;
+}
+
+.checkmark:after {
+    content: '✔';
+    font-size: 1.4rem;
+    color: var(--color-text-on-dark);
+    display: none;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        font-size: 1.6rem; // 增大勾选图标
+    }
+}
+
+.checkboxContainer input:checked~.checkmark:after {
+    display: block;
+}
+
+.checkboxLabel {
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--color-text-tertiary);
+    font-weight: 500;
+    z-index: 1;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        font-size: 1.4rem; // 增大标签字体
+    }
+}

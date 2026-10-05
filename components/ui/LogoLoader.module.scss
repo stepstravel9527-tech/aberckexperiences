@@ -1,0 +1,35 @@
+.logoLoader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.4);
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+}
+
+.logoImage {
+    width: 10rem;
+    height: auto;
+    transform-style: preserve-3d;
+    animation: logoSpin 2s ease-in-out infinite;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        width: 20rem;
+    }
+}
+
+@keyframes logoSpin {
+    from {
+        transform: rotateY(0deg);
+    }
+
+    to {
+        transform: rotateY(360deg);
+    }
+}

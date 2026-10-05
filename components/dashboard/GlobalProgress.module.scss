@@ -1,0 +1,16 @@
+.globalProgress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+
+    i {
+        font-size: 1.6rem;
+        color: #666666;
+    }
+}

@@ -1,0 +1,341 @@
+.membershipSection {
+    // background: linear-gradient(180deg, #FFEDE1 0%, #FFFDFB 100%);
+    min-height: 100vh;
+}
+
+.membershipWrapper {
+    padding: 1.6rem;
+
+    // PC端适配 - 双列布局
+    @media (min-width: 768px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr; // 双列布局
+        grid-template-rows: auto; // 自动行高
+        gap: 2rem; // 列间距
+        padding: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+
+        // membershipIntro 跨两列
+        .membershipIntro {
+            grid-column: 1 / -1; // 跨两列
+            grid-row: 1;
+        }
+
+        // 会员卡片分布在两列 - 每行独立高度
+        .membershipCard:nth-child(2) {
+            grid-column: 1;
+            grid-row: 2;
+            align-self: start; // 顶部对齐
+        }
+
+        .membershipCard:nth-child(3) {
+            grid-column: 2;
+            grid-row: 2;
+            align-self: start; // 顶部对齐
+        }
+
+        .membershipCard:nth-child(4) {
+            grid-column: 1;
+            grid-row: 3;
+            align-self: start; // 顶部对齐
+        }
+
+        .membershipCard:nth-child(5) {
+            grid-column: 2;
+            grid-row: 3;
+            align-self: start; // 顶部对齐
+        }
+    }
+}
+
+.membershipIntro {
+    h3 {
+        color: #1B1B1B;
+        text-align: center;
+        font-size: 2.4rem;
+        font-weight: 700;
+
+        // PC端适配
+        @media (min-width: 768px) {
+            font-size: 3rem; // 增大标题字体
+        }
+    }
+
+    p {
+        color: #838383;
+        text-align: center;
+        font-size: 1.4rem;
+        font-weight: 500;
+        margin-top: 0.2rem;
+
+        // PC端适配
+        @media (min-width: 768px) {
+            font-size: 1.6rem; // 增大描述字体
+            margin-top: 0.5rem; // 增加顶部间距
+        }
+    }
+}
+
+.membershipCard {
+    border: 1px solid black;
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.16);
+    padding: 1.6rem;
+    border-radius: 0.8rem;
+    margin: 2rem 0;
+    cursor: pointer;
+    /* 从下方飞入，初始状态隐藏 */
+    opacity: 0;
+    animation: slideInFromBottom 0.6s ease-out forwards;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        padding: 2rem;
+        border-radius: 1rem;
+        margin: 0;
+    }
+}
+
+.delay1 {
+    animation-delay: 0.1s;
+}
+
+.delay2 {
+    animation-delay: 0.2s;
+}
+
+.delay3 {
+    animation-delay: 0.3s;
+}
+
+.delay4 {
+    animation-delay: 0.4s;
+}
+
+@keyframes slideInFromBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+    70% {
+        opacity: 0.8;
+        transform: translateY(-5px); /* 轻微回弹效果 */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cardInfo {
+    h1 {
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: var(--color-text-primary);
+        text-transform: uppercase;
+
+        // PC端适配
+        @media (min-width: 768px) {
+            font-size: 2rem; // 增大卡片标题字体
+        }
+    }
+
+    p {
+        margin-top: 0.6rem;
+        color: #7C7A7A;
+        font-size: 1.4rem;
+        font-weight: 400;
+
+        // PC端适配
+        @media (min-width: 768px) {
+            font-size: 1.5rem; // 增大描述字体
+        }
+    }
+
+    span {
+        margin-top: 0.6rem;
+    }
+}
+
+.cardToggle {
+    i {
+        color: var(--color-text-primary);
+        font-size: 2rem;
+        cursor: pointer;
+
+        // PC端适配
+        @media (min-width: 768px) {
+            font-size: 2.2rem; // 增大切换图标
+        }
+    }
+}
+
+.cardDropdown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+    border-top: 1px solid #C7D0D5;
+    border-bottom: 1px solid #C7D0D5;
+    padding: 1.2rem 0;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        margin-top: 2.5rem; // 增加顶部间距
+        padding: 1.5rem 0; // 增加内边距
+    }
+
+    img {
+        height: 9rem;
+        width: 9rem;
+        margin-bottom: 1.4rem;
+
+        // PC端适配
+        @media (min-width: 768px) {
+            height: 11rem; // 增大图片尺寸
+            width: 11rem;
+            margin-bottom: 1.6rem; // 增加底部间距
+        }
+    }
+
+    p {
+        color: #2F2F2F;
+        font-size: 1.6rem;
+        font-weight: 400;
+        text-align: center;
+        line-height: 2.4rem;
+
+        // PC端适配
+        @media (min-width: 768px) {
+            font-size: 1.7rem; // 增大描述字体
+        }
+    }
+}
+
+.cardDetails {
+    margin-top: 2rem;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        margin-top: 2.5rem; // 增加顶部间距
+    }
+}
+
+.detailItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        gap: 1.5rem; // 增加间距
+    }
+}
+
+.dataCard {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding: 0.4rem 0.8rem;
+    border: 1px solid #D0D0D0;
+    border-radius: 0.8rem;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        padding: 0.6rem 1rem; // 增加内边距
+        border-radius: 1rem; // 增大圆角
+    }
+}
+
+/* Tourism - 第一行第一列 */
+.dataCard>div:nth-child(1) {
+    grid-row: 1;
+    grid-column: 1;
+}
+
+/* Tourism的值 - 第一行第二列 */
+.dataCard>div:nth-child(2) {
+    grid-row: 1;
+    grid-column: 2;
+}
+
+/* Commission - 第二行第一列 */
+.dataCard>div:nth-child(3) {
+    grid-row: 2;
+    grid-column: 1;
+}
+
+/* Commission的值 - 第二行第二列 */
+.dataCard>div:nth-child(4) {
+    grid-row: 2;
+    grid-column: 2;
+}
+
+.key {
+    flex: 1;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--color-text-primary);
+    line-height: 3.2rem;
+    opacity: 0.6;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        font-size: 1.5rem; // 增大键名字体
+    }
+
+    span {
+        color: var(--color-text-primary);
+        text-decoration: underline;
+    }
+}
+
+.value {
+    flex: 1;
+    color: #111111;
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 3.2rem;
+    text-align: right;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        font-size: 1.5rem; // 增大数值字体
+    }
+
+    span {
+        font-size: 1.6rem;
+
+        // PC端适配
+        @media (min-width: 768px) {
+            font-size: 1.7rem; // 增大特殊数值字体
+        }
+    }
+}
+
+.status {
+    width: fit-content;
+    font-size: 1.4rem;
+    padding: 0.2rem 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background: black;
+    border-radius: 0.4rem;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        font-size: 1.5rem; // 增大状态字体
+        padding: 0.3rem 1rem; // 增加内边距
+        border-radius: 0.5rem; // 增大圆角
+    }
+}

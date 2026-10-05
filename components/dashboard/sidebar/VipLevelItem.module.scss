@@ -1,0 +1,119 @@
+.levelSection {
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    border-radius: var(--radius-sm);
+    background-color: white;
+    cursor: pointer;
+    flex: 1;
+    padding: 1.2rem;
+    transition: all 0.2s ease;
+
+    &:hover {
+        scale: 1.05;
+        // box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    // PC端适配
+    @media (min-width: 768px) {
+        padding: 1.5rem; // 增加内边距
+        border-radius: var(--radius-md); // 增大圆角
+    }
+}
+
+.currentLevel {
+    background-color: white;
+    border: 0px;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        // 可以添加特殊的高亮效果
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.toggleArrow {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    cursor: pointer;
+
+    i {
+        color: black;
+        font-size: 1.3rem;
+
+        // PC端适配
+        @media (min-width: 768px) {
+            font-size: 1.5rem; // 增大箭头图标
+        }
+    }
+
+    // PC端适配
+    @media (min-width: 768px) {
+        padding-right: 0.5rem; // 增加右侧间距
+    }
+}
+
+.vipImage {
+    width: 4rem;
+    height: 4rem;
+    margin-right: 1.2rem;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        width: 4.5rem; // 增大图标尺寸
+        height: 4.5rem;
+        margin-right: 1.5rem; // 增加右侧间距
+    }
+}
+
+.levelDesc {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: var(--text-xs);
+
+    // PC端适配
+    @media (min-width: 768px) {
+        font-size: var(--text-sm); // 增大字体
+        gap: 0.3rem; // 增加子项间距
+    }
+}
+
+.unlockStatus {
+    color: var(--color-success);
+    text-transform: capitalize;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        font-size: var(--text-sm); // 增大字体
+        font-weight: 500; // 增加字重
+    }
+}
+
+.lockStatus {
+    color: var(--color-error);
+    text-transform: capitalize;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        font-size: var(--text-sm); // 增大字体
+        font-weight: 500; // 增加字重
+    }
+}
+
+.levelName {
+    color: var(--color-text-primary);
+    font-size: var(--text-sm);
+    font-style: normal;
+    font-weight: 550;
+    line-height: 20px;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        font-size: var(--text-base); // 增大字体
+        font-weight: 600; // 增加字重
+        line-height: 22px; // 增加行高
+    }
+}

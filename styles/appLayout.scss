@@ -1,0 +1,22 @@
+.platformLayout {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+
+    .platformContent {
+        width: 100%;
+        height: 100vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+        position: relative;
+        -webkit-overflow-scrolling: touch;
+        
+        // 隐藏所有滚动条
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+}

@@ -1,0 +1,41 @@
+.historyFilter {
+    padding: 1.8rem 5.25rem 0rem 5.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.radioGroup {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+}
+
+.radioItem {
+    display: flex;
+    flex: 1;
+    text-align: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0.2rem 1.2rem;
+    border-radius: 0.8rem;
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--color-text-primary);
+    opacity: 0.6;
+    transition: all 0.2s ease;
+    font-size: 2rem;
+    font-weight: 400;
+
+    &:hover {
+        color: var(--color-text-secondary);
+    }
+}
+
+// 选中状态
+.active {
+    border: 1px solid var(--color-text-primary);
+    font-weight: 500;
+    opacity: 1;
+    color: var(--color-text-primary);
+}

@@ -1,0 +1,102 @@
+.welcomeSection {
+    min-height: 100vh;
+    padding: 4.6rem 3.2rem;
+
+    background-size: cover;
+    background-position: center;
+    background-image: url('/images/bg_auth.png');
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2.4rem;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        padding: 6rem 4rem; // 增加内边距
+        justify-content: center; // 内容垂直居中
+        gap: 3rem; // 增加间距
+        background-attachment: fixed; // 背景固定，营造视差效果
+    }
+
+    .contentContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 2.4rem;
+
+        // PC端适配
+        @media (min-width: 768px) {
+            gap: 3rem; // 增加内容区域间距
+        }
+    }
+
+    .logoContainer {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 12.5rem;
+
+        img {
+            width: 16rem;
+            height: auto;
+
+            // PC端适配
+            @media (min-width: 768px) {
+                width: 32rem; // 增大Logo尺寸
+            }
+        }
+
+        // PC端适配
+        @media (min-width: 768px) {
+            margin-bottom: 8rem; // 调整Logo底部间距
+        }
+    }
+
+    .textContainer {
+        padding: 2rem 2.4rem;
+        gap: 1.2rem;
+        display: flex;
+        flex-direction: column;
+        background: rgba(255, 255, 255, 0.70);
+        border-radius: 1.6rem;
+
+        // PC端适配
+        @media (min-width: 768px) {
+            max-width: 600px;
+            padding: 3rem 4rem; // 增加内边距
+            gap: 1.6rem; // 增加文字间距
+            border-radius: 2rem; // 增大圆角
+            backdrop-filter: blur(10px); // 添加毛玻璃效果
+            background: rgba(255, 255, 255, 0.80); // 增加背景透明度
+        }
+
+        h1 {
+            color: var(--color-text-primary);
+            font-size: 2.1rem;
+            font-weight: 600;
+            line-height: 1.5;
+            letter-spacing: 1px;
+
+            // PC端适配
+            @media (min-width: 768px) {
+                font-size: 2.8rem; // 增大标题字体
+                line-height: 1.4; // 优化行高
+            }
+        }
+
+        p {
+            color: var(--color-text-secondary);
+            font-size: 1.4rem;
+            font-weight: 400;
+            line-height: 1.5;
+            letter-spacing: 0.85px;
+            opacity: 0.8;
+
+            // PC端适配
+            @media (min-width: 768px) {
+                font-size: 1.6rem; // 增大正文字体
+                line-height: 1.6; // 优化行高
+            }
+        }
+    }
+}

@@ -1,0 +1,238 @@
+.gridContainer {
+    margin: 0 2.4rem 0 2.4rem;
+    padding: 1.0rem 0 1.6rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, auto);
+    align-items: center;
+    gap: 1.2rem;
+    border-bottom: 1px solid #E5E7EB;
+
+    // ===== 移动端布局：2列4行 =====
+    &>*:nth-child(1) {
+        grid-row: 1;
+        grid-column: 1 / span 2;
+        margin-bottom: -0.4rem;
+    }
+
+    &>*:nth-child(2) {
+        grid-row: 2;
+        grid-column: 1;
+    }
+
+    &>*:nth-child(3) {
+        grid-row: 2;
+        grid-column: 2;
+    }
+
+    &>*:nth-child(4) {
+        grid-row: 3;
+        grid-column: 1 / span 2;
+    }
+
+    &>*:nth-child(5) {
+        grid-row: 4;
+        grid-column: 1;
+    }
+
+    &>*:nth-child(6) {
+        grid-row: 4;
+        grid-column: 2;
+    }
+
+    // ===== PC端适配：3行3列布局 =====
+    @media (min-width: 768px) {
+        margin: 0 4rem 0 4rem;
+        padding: 1.8rem 0 2.4rem 0;
+        grid-template-columns: 1.5fr 1fr 1fr; // 3列布局，左侧列更宽
+        grid-template-rows: repeat(3, auto); // 3行布局
+        gap: 2rem;
+
+        &>*:nth-child(4) {
+            grid-row: 1 / span 3; // 跨3行
+            grid-column: 1;
+        }
+
+        &>*:nth-child(1) {
+            grid-row: 1;
+            grid-column: 2 / span 2;
+            margin-bottom: 0;
+        }
+
+        &>*:nth-child(2) {
+            grid-row: 2;
+            grid-column: 2;
+        }
+
+        &>*:nth-child(3) {
+            grid-row: 2;
+            grid-column: 3;
+        }
+
+        &>*:nth-child(5) {
+            grid-row: 3;
+            grid-column: 2;
+        }
+
+        &>*:nth-child(6) {
+            grid-row: 3;
+            grid-column: 3;
+        }
+    }
+}
+
+/* 产品名称样式 */
+.productName {
+    color: #1B1B1B;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 140%;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        font-size: 2.4rem; // 增大产品名称字体
+    }
+}
+
+/* 产品状态标签样式 */
+.productStatus {
+    width: fit-content;
+    padding: 0.6rem 1.0rem;
+    border-radius: 0.4rem;
+    border: 1px solid #070707;
+    color: #070707;
+    background: #F8F8F8;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: capitalize;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        font-size: 1.4rem; // 增大状态标签字体
+        padding: 0.8rem 1.2rem; // 增加内边距
+    }
+}
+
+/* 交易时间容器 */
+.dateContainer {
+    color: #6C757D;
+    text-align: right;
+    font-size: 1.4rem;
+    font-weight: 400;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        font-size: 1.6rem; // 增大时间字体
+    }
+}
+
+/* 产品图片区域 */
+.imageContent {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px dashed #E5E7EB; // 底部虚线分隔
+
+    // PC端适配
+    @media (min-width: 768px) {
+        border-bottom: none; // PC端移除虚线分隔
+    }
+}
+
+/* 图片容器 */
+.imageContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 17rem;
+    border-radius: 1rem;
+    overflow: hidden; // 隐藏溢出部分，保持圆角效果
+
+    // PC端适配
+    @media (min-width: 768px) {
+        height: 20rem; // 增大图片高度
+        border-radius: 1.2rem; // 增大圆角
+    }
+
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover; // 保持图片比例并填充容器
+        object-position: center; // 图片居中显示
+    }
+}
+
+/* 价格覆盖层（图片上的价格标签） */
+.priceOverlay {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    align-items: baseline;
+    background: rgba(0, 0, 0, 0.1); // 半透明黑色背景
+    padding: 0.5rem 1rem;
+    color: white;
+    font-family: Rubik;
+    font-size: 1.4rem;
+    font-weight: 500;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        font-size: 1.6rem; // 增大价格字体
+        padding: 0.8rem 1.2rem; // 增加内边距
+    }
+
+    span {
+        font-size: 1.8rem;
+        font-weight: 600; // 价格数字加粗显示
+
+        // PC端适配
+        @media (min-width: 768px) {
+            font-size: 2rem; // 增大价格数字
+        }
+    }
+}
+
+/* 佣金信息容器 */
+.commissionsContainer {
+    display: grid;
+    grid-template-columns: auto 1fr; // 图标固定宽度，内容自适应
+    grid-template-rows: 1fr 1fr; // 两行布局：标签和数值
+    gap: 0.4rem 0.8rem; // 行间距0.4rem，列间距0.8rem
+    align-items: center;
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.8rem;
+    border: 1px solid rgba(0, 0, 0, 0.80);
+    background: #F8F8F8; // 浅灰色背景
+}
+
+/* 佣金图标 */
+.commissionIcon {
+    grid-row: 1 / span 2; // 图标跨两行
+    grid-column: 1;
+    width: 3rem;
+    height: 3rem;
+}
+
+/* 佣金标签文字 */
+.commissionLabel {
+    grid-row: 1;
+    grid-column: 2;
+    color: #848484; // 灰色文字
+    font-size: 1.2rem;
+    font-weight: 600;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        font-size: 1.4rem; // 增大标签字体
+    }
+}
+
+/* 佣金数值 */
+.commissionValue {
+    grid-row: 2;
+    grid-column: 2;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #0D0D0D; // 深黑色文字
+}

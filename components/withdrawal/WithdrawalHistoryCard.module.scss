@@ -1,0 +1,206 @@
+// 基础网格容器样式
+%gridContainer {
+    margin: 1.6rem 2.4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1.2rem;
+    border-radius: 0.8rem;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    background: #F8F8F8;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        margin: 2rem auto;
+        max-width: 1200px;
+        padding: 2rem;
+        gap: 1.2rem;
+        border-radius: 1.2rem;
+    }
+}
+
+.withdrawalHistoryCardContainer {
+    @extend %gridContainer;
+
+    // 提现页面的具体定位
+    &>*:nth-child(1) {
+        grid-row: 1;
+        grid-column: 1 / span 2;
+        margin-bottom: -0.4rem;
+    }
+
+    &>*:nth-child(2) {
+        grid-row: 2;
+        grid-column: 1;
+    }
+
+    &>*:nth-child(3) {
+        grid-row: 2;
+        grid-column: 2;
+    }
+
+    &>*:nth-child(4) {
+        grid-row: 3;
+        grid-column: 1 / span 2;
+    }
+
+    &>*:nth-child(5) {
+        grid-row: 4;
+        grid-column: 1 / span 2;
+    }
+
+    &>*:nth-child(6) {
+        grid-row: 5;
+        grid-column: 1;
+    }
+
+    &>*:nth-child(7) {
+        grid-row: 5;
+        grid-column: 2;
+    }
+}
+
+.rechargeHistoryCardContainer {
+    @extend %gridContainer;
+    
+    // 充值页面的具体定位
+    &>*:nth-child(1) {
+        grid-row: 1;
+        grid-column: 1 / span 2;
+        margin-bottom: -0.4rem;
+    }
+
+    &>*:nth-child(2) {
+        grid-row: 2;
+        grid-column: 1 / span 2;
+    }
+
+    &>*:nth-child(3) {
+        grid-row: 3;
+        grid-column: 1 / span 2;
+    }
+
+    &>*:nth-child(4) {
+        grid-row: 4;
+        grid-column: 1;
+    }
+
+    &>*:nth-child(5) {
+        grid-row: 4;
+        grid-column: 2;
+    }
+}
+
+/* ===== 内容样式 ===== */
+// 卡片标题
+.cardTitle {
+    font-size: 1.8rem;
+    color: var(--color-text-primary);
+    font-weight: 600;
+    line-height: 2.5rem;
+    letter-spacing: -0.05rem;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        font-size: 2.2rem; // 增大标题字体
+        line-height: 3rem; // 优化行高
+    }
+}
+
+// 状态徽章
+.statusBadge {
+    width: fit-content;
+    color: black;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 0.3rem 1.2rem;
+    border: 1px solid black;
+    border-radius: 0.4rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-transform: capitalize;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        padding: 0.5rem 1.5rem; // 增加内边距
+        font-size: 1.4rem; // 增大状态字体
+        border-radius: 0.6rem; // 增大圆角
+    }
+}
+
+// 交易日期
+.transactionDate {
+    text-align: right;
+    color: #6C757D;
+    font-size: 1.4rem;
+    font-weight: 400;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        font-size: 1.6rem; // 增大日期字体
+    }
+}
+
+// 用户信息
+.userInfo {
+    color: #7B7B7B;
+    font-size: 1.4rem;
+    font-weight: 500;
+    word-wrap: break-word;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        font-size: 1.6rem; // 增大用户信息字体
+    }
+}
+
+// 钱包地址
+.walletAddress {
+    color: #7B7B7B;
+    font-size: 1.4rem;
+    font-weight: 500;
+    word-wrap: break-word;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        font-size: 1.6rem; // 增大钱包地址字体
+    }
+}
+
+// 金额标签
+.amountLabel {
+    color: #848484;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.5;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        font-size: 1.6rem; // 增大金额标签字体
+    }
+}
+
+// 金额数值
+.amountValue {
+    text-align: right;
+    color: black;
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1.5;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        font-size: 2.4rem; // 增大金额数值字体
+    }
+
+    // 货币符号
+    span {
+        font-size: 1.4rem;
+
+        // PC端适配
+        @media (min-width: 768px) {
+            font-size: 1.6rem; // 增大货币符号字体
+        }
+    }
+}

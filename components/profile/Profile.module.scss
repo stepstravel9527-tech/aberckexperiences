@@ -1,0 +1,306 @@
+.profileSection {
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-image: url('/images/bg_profile.png');
+
+    // PC端适配
+    @media (min-width: 768px) {
+        background-attachment: fixed; // 背景图片固定，营造视差效果
+    }
+}
+
+.profileContent {
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 5rem;
+    padding-bottom: 2.4rem;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        max-width: 800px; // 增大最大宽度
+        padding-top: 8rem; // 增加顶部内边距
+        padding-bottom: 4rem; // 增加底部内边距
+    }
+}
+
+.profileCard {
+    margin: 1.6rem 1.6rem 0rem 1.6rem;
+    display: flex;
+    padding: 1.6rem;
+    gap: 1.6rem;
+    background: #FAFAFA;
+    border-radius: 0.8rem;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        margin: 2rem 2rem 0rem 2rem; // 增加外边距
+        padding: 2.4rem; // 增加内边距
+        gap: 2rem; // 增加间距
+        border-radius: 1.2rem; // 增大圆角
+    }
+}
+
+.profileCardLeft {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        gap: 0.8rem; // 增加间距
+    }
+}
+
+.profileCardRight {
+    width: 100%;
+    padding-top: 2.8rem;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        padding-top: 3.2rem; // 调整顶部内边距
+    }
+}
+
+.userLevel {
+    color: var(--color-text-primary);
+    font-size: 2rem;
+    font-weight: 700;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        font-size: 2.4rem; // 增大等级字体
+    }
+}
+
+.userName {
+    margin-top: 0.8rem;
+    color: var(--color-text-primary);
+    font-size: 1.4rem;
+    font-weight: 500;
+    opacity: 0.9;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        font-size: 1.6rem; // 增大用户名字体
+        margin-top: 1rem; // 增加顶部间距
+    }
+
+    span {
+        opacity: 0.6;
+        font-weight: 400;
+    }
+}
+
+.invitationCode {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        gap: 0.8rem; // 增加间距
+    }
+}
+
+.codeText {
+    color: var(--color-text-secondary);
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 2.4rem;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        font-size: 1.6rem; // 增大邀请码字体
+    }
+}
+
+.copyIcon {
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.progressBar {
+    margin-top: 0.8rem;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        margin-top: 1rem; // 增加顶部间距
+    }
+}
+
+.progressContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.progressTrack {
+    background: var(--color-light);
+    height: 0.8rem;
+    position: relative;
+    border-radius: 0.5rem;
+    width: 100%;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        height: 1rem; // 增加进度条高度
+        border-radius: 0.8rem; // 增大圆角
+    }
+}
+
+.progressThumb {
+    height: 100%;
+    background: var(--color-button-primary);
+    border-radius: 1rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    transition: width 0.3s ease;
+}
+
+.progressPresent {
+    margin-top: 4.5rem;
+    margin-right: -1.5rem;
+    position: relative;
+    background: var(--color-button-primary);
+    font-size: 1.4rem;
+    color: white;
+    border-radius: 0.4rem;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 2.5rem;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        margin-top: 5rem; // 调整位置
+        margin-right: -2rem; // 调整位置
+        font-size: 1.6rem; // 增大字体
+        width: 4.5rem; // 增大宽度
+        height: 3rem; // 增大高度
+    }
+
+    .progressArrow {
+        position: absolute;
+        top: -3px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 5px;
+        height: 5px;
+        transform: rotate(45deg);
+        background: var(--color-button-primary);
+
+        // PC端适配
+        @media (min-width: 768px) {
+            top: -4px; // 调整箭头位置
+            width: 6px; // 增大箭头
+            height: 6px;
+        }
+    }
+}
+
+.profileLinks {
+    margin-top: 2.2rem;
+    padding: 0 2.4rem;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        margin-top: 3rem; // 增加顶部间距
+        padding: 0 3rem; // 增加左右内边距
+    }
+
+    button {
+        margin-top: 12.8rem;
+        border: 1px solid white;
+
+        // PC端适配
+        @media (min-width: 768px) {
+            margin-top: 15rem; // 增加按钮顶部间距
+        }
+    }
+}
+
+.sectionTitle {
+    margin-top: 2rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: white;
+    line-height: 2.2rem;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        margin-top: 2.5rem; // 增加顶部间距
+        font-size: 1.6rem; // 增大标题字体
+    }
+}
+
+.menuItem {
+    margin-top: 1.6rem;
+    padding-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.2rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    padding-bottom: 1.2rem;
+    border-bottom: var(--border-solid);
+
+    // PC端适配
+    @media (min-width: 768px) {
+        margin-top: 2rem; // 增加顶部间距
+        padding-bottom: 1.6rem; // 增加底部内边距
+        gap: 1.5rem; // 增加间距
+    }
+
+    svg {
+        width: 2.4rem;
+        height: 2.4rem;
+        transition: fill 0.2s ease;
+
+        // PC端适配
+        @media (min-width: 768px) {
+            width: 2.8rem; // 增大图标
+            height: 2.8rem;
+        }
+    }
+
+    .linkRow {
+        display: flex;
+        flex: 1;
+        justify-content: space-between;
+        align-items: center;
+
+        span {
+            color: white;
+            font-size: 1.6rem;
+            font-weight: 400;
+            line-height: 2.4rem;
+            letter-spacing: 0.008rem;
+            transition: color 0.2s ease;
+
+            // PC端适配
+            @media (min-width: 768px) {
+                font-size: 1.8rem; // 增大菜单项字体
+            }
+        }
+    }
+}
+
+.buttonWraper {
+    margin: 5rem var(--space-4) var(--space-6) var(--space-4);
+
+    // PC端适配
+    @media (min-width: 768px) {
+        margin: 6rem var(--space-4) var(--space-8) var(--space-4); // 增加间距
+    }
+}

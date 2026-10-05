@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Calistoga&family=Cambay&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+// :root 在 globals.scss 中
+:root {
+    /* 1. 文本色 (Text Colors) */
+    --color-text-primary: #3d3c3a;
+    --color-text-secondary: #333333;
+    --color-text-tertiary: #666666;
+    --color-text-on-dark: #FFFFFF;
+
+    /* 2. 特殊颜色 (Special Colors) */
+    --color-dark-blue: #212529;
+    --color-button-title: #121F26;
+    --color-light-green: #81BFBD;
+    --color-gray: #555555;
+    --color-bg-light: #F2F2F2;
+
+    /* 3. 功能色 (Functional Colors) */
+    --color-button-primary: #000000;
+    --color-button-secondary: #808080;
+    --color-button-tertiary: #065FD4;
+    --color-link: #065FD4;
+    --color-overlay: #000000B3;
+
+    /* 4. 边框和分隔线 (Borders & Dividers) */
+    --color-border: #DDDDDD;
+    --border-solid: 1px solid var(--color-border);
+    --border-dashed: 1px dashed var(--color-border);
+    --border-solid-primary: 1px solid var(--color-button-primary);
+    --border-solid-secondary: 1px solid var(--color-button-secondary);
+    --border-solid-tertiary: 1px solid var(--color-text-tertiary);
+    --border-solid-black: 1px solid black;
+    --border-solid-white: 1px solid white;
+
+    /* 5. 状态色 (Status Colors) */
+    --color-success: #2E7D32;
+    --color-warning: #FFC107;
+    --color-error: #F4081F;
+    --color-info: #0288D1;
+
+    /* 字体大小 */
+    --text-xs: 1.2rem;
+    --text-sm: 1.4rem;
+    --text-base: 1.6rem;
+    --text-lg: 1.8rem;
+    --text-xl: 2rem;
+    --text-xxl: 2.4rem;
+
+    /* 间距 */
+    --space-1: 0.4rem;
+    --space-2: 0.8rem;
+    --space-3: 1.2rem;
+    --space-4: 1.6rem;
+    --space-5: 2.4rem;
+    --space-6: 3.2rem;
+    --space-7: 4.8rem;
+    --space-8: 6.4rem;
+
+    /* 圆角 */
+    --radius-sm: 0.4rem;
+    --radius-md: 0.8rem;
+    --radius-lg: 1.2rem;
+
+    /* 阴影 */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+html {
+    font-size: 10px; //1rem = 10px
+}
+
+// @media only screen and (min-width: 768px) {
+
+//     html {
+//         font-size: 16px; //1rem = 16px
+//     }
+// }
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+.go2072408551 {
+    max-width: 720px !important;
+}
+
+/* Remove spinner for Chrome, Safari, Edge, and Opera */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Remove spinner for Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+input:disabled {
+    cursor: not-allowed;
+}
+
+.pageAnimation {
+    animation: fadeAnimation 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeAnimation {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

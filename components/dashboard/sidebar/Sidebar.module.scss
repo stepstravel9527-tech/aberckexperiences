@@ -1,0 +1,294 @@
+// 基础容器样式
+.sidebarOverlay {
+    background: rgba(0, 0, 0, 0.776);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    height: 100%;
+    width: 100%;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        background: rgba(0, 0, 0, 0.5);
+    }
+}
+
+.sidebarContent {
+    width: 80%;
+    height: 100vh;
+    background: black;
+    position: absolute;
+    top: 0;
+    padding: 7.2rem 2.4rem 2.4rem 2.4rem;
+    overflow-y: auto;
+
+    // 隐藏所有浏览器滚动条
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    // PC端适配
+    @media (min-width: 768px) {
+        width: 400px;
+        padding: 8rem 3rem 3rem 3rem;
+    }
+}
+
+// 侧边栏位置和动画
+.sidebarLeft {
+    left: -100%;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        left: -400px;
+    }
+
+    &.sidebarOpen {
+        left: 0 !important;
+        animation: sidebarSlideInFromLeftMobile 0.2s ease-out forwards;
+
+        @media (min-width: 768px) {
+            animation: sidebarSlideInFromLeftDesktop 0.3s ease-out forwards;
+        }
+    }
+}
+
+.sidebarRight {
+    right: -100%;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        right: -400px;
+    }
+
+    &.sidebarOpen {
+        right: 0 !important;
+        animation: sidebarSlideInFromRightMobile 0.2s ease-out forwards;
+
+        @media (min-width: 768px) {
+            animation: sidebarSlideInFromRightDesktop 0.3s ease-out forwards;
+        }
+    }
+}
+
+// 左侧动画
+@keyframes sidebarSlideInFromLeftMobile {
+    from {
+        opacity: 0;
+        transform: translateX(-3rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes sidebarSlideInFromLeftDesktop {
+    from {
+        opacity: 0;
+        transform: translateX(-5rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+// 右侧动画
+@keyframes sidebarSlideInFromRightMobile {
+    from {
+        opacity: 0;
+        transform: translateX(3rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes sidebarSlideInFromRightDesktop {
+    from {
+        opacity: 0;
+        transform: translateX(5rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+// 通用内容样式
+.sidebarLogo {
+    width: 100%;
+    margin-bottom: 2.4rem;
+    text-align: center;
+
+    img {
+        width: 8rem;
+        height: auto;
+
+        // PC端适配
+        @media (min-width: 768px) {
+            width: 22rem;
+        }
+    }
+}
+
+.sidebarUserProfile {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        gap: 1.2rem;
+    }
+
+    .userAvatar {
+        width: 4.5rem;
+        height: 4.5rem;
+        border-radius: 2.25rem;
+        object-fit: cover;
+        background: white;
+
+
+        // PC端适配
+        @media (min-width: 768px) {
+            width: 5rem;
+            height: 5rem;
+            border-radius: 2.5rem;
+        }
+    }
+
+    .userInfo {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        // PC端适配
+        @media (min-width: 768px) {
+            gap: 0.6rem;
+        }
+
+        .userSignedInText {
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: white;
+            letter-spacing: -0.014rem;
+            margin: 0;
+
+            // PC端适配
+            @media (min-width: 768px) {
+                font-size: 1.5rem;
+            }
+        }
+
+        .userName {
+            color: white;
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: -0.016rem;
+            margin: 0;
+
+            // PC端适配
+            @media (min-width: 768px) {
+                font-size: 1.8rem;
+            }
+        }
+    }
+}
+
+.sidebarMenuList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        gap: 1rem;
+    }
+}
+
+// 菜单项样式
+.sidebarMenuItem {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1rem;
+    text-decoration: none;
+    color: white;
+    transition: all 0.2s ease;
+    border-radius: 0.5rem;
+    cursor: pointer;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        gap: 1.5rem;
+        padding: 1.2rem;
+    }
+
+    &:hover {
+        scale: 1.05;
+        background-color: #333;
+    }
+
+}
+
+.menuItemIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        width: 2.2rem;
+        height: 2.2rem;
+    }
+
+    &.iconLarge {
+        scale: 1.2;
+    }
+
+    svg {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.menuItemLabel {
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 400;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        font-size: 1.6rem;
+    }
+
+    &.labelAlert {
+        color: #ff6b6b;
+    }
+}
+
+// 分隔线
+.sidebarDivider {
+    height: 1px;
+    background: var(--color-border);
+    margin: 1rem 0;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        margin: 1.2rem 0;
+    }
+}

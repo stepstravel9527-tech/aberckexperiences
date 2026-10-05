@@ -1,0 +1,380 @@
+.formInputSection {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: var(--space-1);
+
+    // PC端适配
+    @media (min-width: 768px) {
+        gap: var(--space-2); // 增加表单项间距
+    }
+}
+
+.inputLabel {
+    color: var(--color-text-secondary);
+    font-size: var(--text-lg);
+    font-weight: 500;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        font-size: var(--text-xl); // 增大标签字体
+    }
+}
+
+.quickActionLabel {
+    color: var(--color-text-tertiary);
+    font-size: var(--text-lg);
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+
+    /* 添加 flex 布局实现垂直居中 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    /* 文字与分割线之间的间距 */
+
+    /* 添加伪元素创建分割线 */
+    &::before,
+    &::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background-color: var(--color-border);
+        opacity: 0.5;
+    }
+
+    // PC端适配
+    @media (min-width: 768px) {
+        font-size: var(--text-xl); // 增大标签字体
+        gap: 1.5rem; // PC端增大间距
+    }
+}
+
+.inputContainer {
+    position: relative;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        margin-bottom: var(--space-2); // 增加底部间距
+    }
+
+    .inputIcon {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        color: var(--color-text-secondary);
+
+        svg {
+            height: 1.5rem;
+            width: 1.5rem;
+
+            // PC端适配
+            @media (min-width: 768px) {
+                height: 1.8rem; // 增大图标尺寸
+                width: 1.8rem;
+            }
+        }
+    }
+
+    input {
+        width: 100%;
+        padding: var(--space-2) var(--space-5) var(--space-2) var(--space-5); // leave space for the icon
+        border: none;
+        border-bottom: var(--border-solid);
+        font-size: var(--text-sm);
+        font-weight: 500;
+        color: var(--color-text-secondary);
+        outline: none;
+
+        // PC端适配
+        @media (min-width: 768px) {
+            padding: var(--space-3) var(--space-6) var(--space-3) var(--space-6); // 增加内边距
+            font-size: var(--text-base); // 增大输入框字体
+        }
+
+        &::placeholder {
+            color: var(--color-text-tertiary);
+        }
+
+        // 使用属性选择器
+        &[disabled] {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+    }
+
+    .noInputIcon {
+        padding: var(--space-2) 0 var(--space-2) 0; // no icon, so no left padding
+
+        // PC端适配
+        @media (min-width: 768px) {
+            padding: var(--space-3) 0 var(--space-3) 0; // 调整无图标时的内边距
+        }
+    }
+
+    .rightInputtIcon {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+        font-size: var(--text-sm);
+        color: var(--color-text-tertiary);
+        cursor: pointer;
+
+        // PC端适配
+        @media (min-width: 768px) {
+            font-size: var(--text-base); // 增大右侧图标字体
+        }
+    }
+
+    .radioGroup {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+        width: 100%;
+        padding: var(--space-2);
+        border: none;
+        border-bottom: var(--border-solid);
+        font-size: var(--text-sm);
+        font-weight: 500;
+        color: var(--color-text-secondary);
+
+        // PC端适配
+        @media (min-width: 768px) {
+            padding: var(--space-3); // 增加内边距
+            font-size: var(--text-base); // 增大单选框字体
+            gap: 1.5rem; // 增加单选框间距
+        }
+
+        .radioLabel {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            cursor: pointer;
+            position: relative;
+            font-size: var(--text-sm);
+            font-weight: 500;
+            color: var(--color-text-secondary);
+            transition: color 0.3s ease;
+
+            // PC端适配
+            @media (min-width: 768px) {
+                font-size: var(--text-base); // 增大单选框标签字体
+            }
+
+            // 选中状态
+            &:has(input:checked) {
+                color: var(--color-button-primary);
+                font-weight: 700;
+            }
+
+            // 禁用状态
+            &:has(input:disabled) {
+                opacity: 0.6;
+                cursor: not-allowed;
+            }
+
+            input[type="radio"] {
+                opacity: 0;
+                position: absolute;
+                width: 0;
+                height: 0;
+            }
+
+            .radioCustom {
+                width: 1.6rem;
+                height: 1.6rem;
+                border: var(--border-solid-tertiary);
+                border-radius: 0.8rem;
+                margin-right: 0.4rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.3s ease;
+
+                // PC端适配
+                @media (min-width: 768px) {
+                    width: 1.8rem; // 增大单选框尺寸
+                    height: 1.8rem;
+                    border-radius: 0.9rem;
+                    margin-right: 0.6rem; // 增加右边距
+                }
+            }
+
+            input:checked+.radioCustom {
+                background-color: var(--color-button-primary);
+                border-color: var(--color-button-primary);
+
+                &::after {
+                    content: '✔';
+                    font-size: 1.2rem;
+                    color: #ffffff;
+
+                    // PC端适配
+                    @media (min-width: 768px) {
+                        font-size: 1.3rem; // 增大勾选图标
+                    }
+                }
+            }
+        }
+    }
+
+    .quickActionRadioGroup {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+        width: 100%;
+        padding: var(--space-2);
+        border: none;
+
+        // PC端适配
+        @media (min-width: 768px) {
+            padding: var(--space-3);
+            gap: 1.2rem;
+        }
+
+        .radioLabel {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            position: relative;
+            font-size: var(--text-sm);
+            font-weight: 500;
+            color: var(--color-text-tertiary);
+            transition: all 0.3s ease;
+            padding: 0.8rem 1rem;
+            border: var(--border-solid);
+            border-radius: 0.4rem; // 圆角矩形
+            background-color: transparent; // 透明背景
+
+            // PC端适配
+            @media (min-width: 768px) {
+                font-size: var(--text-base);
+                padding: 1rem 1.2rem;
+                border-radius: 0.8rem; // 圆角矩形
+            }
+
+            // 选中状态 - 黑底白字
+            &:has(input:checked) {
+                color: white;
+                background-color: black; // 黑色背景
+                border-color: black; // 黑色边框
+            }
+
+            // 禁用状态
+            &:has(input:disabled) {
+                opacity: 0.6;
+                cursor: not-allowed;
+            }
+
+            input[type="radio"] {
+                opacity: 0;
+                position: absolute;
+                width: 0;
+                height: 0;
+            }
+
+            // 移除圆形选择框和勾选图标
+            .radioCustom {
+                display: none;
+            }
+        }
+    }
+}
+
+.errorMessage {
+    display: flex;
+    color: var(--color-error);
+    font-weight: 400;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        font-size: var(--text-sm); // 增大错误信息字体
+    }
+
+    i {
+        margin-right: var(--space-1);
+    }
+}
+
+input:invalid[focused]~.errorMessage {
+    display: flex !important;
+}
+
+.strengthLabel {
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-transform: uppercase;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        font-size: 1.3rem; // 增大强度标签字体
+    }
+
+    &.weak {
+        color: var(--color-error); // 修正变量语法
+    }
+
+    &.medium {
+        color: var(--color-warning); // 修正变量语法
+    }
+
+    &.strong {
+        color: var(--color-success); // 修正变量语法
+    }
+}
+
+.passwordStrength {
+    p {
+        font-size: 1.2rem;
+        font-weight: 400;
+        text-transform: uppercase;
+
+        // PC端适配
+        @media (min-width: 768px) {
+            font-size: 1.3rem; // 增大密码强度字体
+        }
+    }
+
+    span {
+        color: var(--color-text-tertiary);
+
+        // PC端适配
+        @media (min-width: 768px) {
+            font-size: var(--text-sm); // 增大提示文字字体
+        }
+    }
+}
+
+
+
+.shakeAnimation {
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: translateX(-5px);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: translateX(5px);
+    }
+}

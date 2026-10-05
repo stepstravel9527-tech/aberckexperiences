@@ -1,0 +1,42 @@
+.section2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+// ========== Title 样式 ==========
+.title {
+  color: white;
+  background-color: #9f593a;
+  font-size: 2.2rem;
+  font-weight: 400;
+  line-height: 1.4;
+  text-align: center;
+  padding: 2rem;
+  width: 100%;
+  
+  // PC端适配
+  @media (min-width: 768px) {
+    font-size: 2.4rem; // PC端稍大
+    padding: 2.5rem 3rem;
+  }
+}
+
+// ========== Desc 样式 ==========
+.desc {
+  color: var(--color-text-primary);
+  background-color: #f5f2ec;
+  font-size: 2.2rem;
+  font-weight: 400;
+  line-height: 1.4;
+  text-align: center;
+  padding: 2rem;
+  width: 100%;
+  
+  // PC端适配
+  @media (min-width: 768px) {
+    font-size: 2.4rem; // PC端稍大
+    padding: 2.5rem 3rem;
+  }
+}

@@ -1,0 +1,137 @@
+.popupOverlay {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    max-width: 768px;
+    z-index: 120;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.747);
+
+    img {
+        height: auto;
+        width: 95% !important;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+    .popupOverlay {
+        width: 100%;
+    }
+}
+
+// 动画样式
+.backFade {
+    animation-name: backFadeAnimation;
+    animation-fill-mode: forwards;
+}
+
+@keyframes backFadeAnimation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.backFadeUp {
+    animation-name: backFadeUpAnimation;
+    animation-fill-mode: forwards;
+}
+
+@keyframes backFadeUpAnimation {
+    from {
+        opacity: 0;
+        transform: translateY(4rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0rem);
+    }
+}
+
+.backFadeDown {
+    animation-name: backFadeDownAnimation;
+    animation-fill-mode: forwards;
+}
+
+@keyframes backFadeDownAnimation {
+    from {
+        opacity: 0;
+        transform: translateY(-4rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0rem);
+    }
+}
+
+.backFadeRight {
+    animation-name: backFadeRightAnimation;
+    animation-fill-mode: forwards;
+}
+
+@keyframes backFadeRightAnimation {
+    from {
+        opacity: 0;
+        transform: translateX(-4rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0rem);
+    }
+}
+
+.backFadeLeft {
+    animation-name: backFadeLeftAnimation;
+    animation-fill-mode: forwards;
+}
+
+@keyframes backFadeLeftAnimation {
+    from {
+        opacity: 0;
+        transform: translateX(4rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0rem);
+    }
+}
+
+.backFadeScale {
+    animation-name: backFadeScaleAnimation;
+    animation-fill-mode: forwards;
+}
+
+@keyframes backFadeScaleAnimation {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.backScale {
+    animation-name: backScaleAnimation;
+    animation-fill-mode: forwards;
+}
+
+@keyframes backScaleAnimation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.4);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

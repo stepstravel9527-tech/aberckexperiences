@@ -1,0 +1,13 @@
+.sliderContainer {
+
+    .imageContainer {
+        margin-left: 0.5rem;
+        padding: 0 0.5rem;
+
+        img {
+            height: auto;
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+}

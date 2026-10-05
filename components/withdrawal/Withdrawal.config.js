@@ -1,0 +1,68 @@
+export function getMetaData(value) {
+    const metaData = [
+        {
+            id: 1,
+            label: "Withdrawal Amount",
+            type: "text",
+            inputMode: "decimal",
+            placeholder: "Please enter withdrawal amount",
+            name: "amount",
+            hasAll: true,
+            pattern: "^\d*(\.\d{0,2})?$",
+            autoComplete: "off",
+            onInput: function (event) {
+                const value = event.target.value;
+                // 先移除所有非数字和小数点的字符
+                let newValue = value.replace(/[^\d.]/g, '');
+
+                // 确保最多只有一个小数点
+                const parts = newValue.split('.');
+                if (parts.length > 2) {
+                    newValue = parts[0] + '.' + parts.slice(1).join('');
+                }
+
+                // 限制小数位数不超过2位
+                if (parts.length === 2 && parts[1].length > 2) {
+                    newValue = parts[0] + '.' + parts[1].substring(0, 2);
+                }
+                event.target.value = newValue;
+            },
+            required: true
+        },
+        {
+            id: 2,
+            label: "Or Quick Action",
+            type: "radio",
+            options: [
+                { value: "50", label: "$ 50" },
+                { value: "100", label: "$ 100" },
+                { value: "200", label: "$ 200" },
+                { value: "500", label: "$ 500" },
+                { value: "1000", label: "$ 1000" },
+                { value: "2000", label: "$ 2000" },
+                { value: "5000", label: "$ 5000" },
+                { value: "", label: "Others" }
+            ],
+            name: "amount",
+            autoComplete: "off",
+            required: true
+        },
+        {
+            id: 3,
+            label: "Withdrawal Password",
+            type: "password",
+            placeholder: "Enter withdrawal password",
+            name: "withdrawal_pin",
+            autoComplete: "off",
+            iconImage: `
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M3.9375 5.24996V4.22913C3.9375 2.53761 5.30833 1.16663 7 1.16663C8.69167 1.16663 10.0625 2.53688 10.0625 4.22913V5.24996H10.2085C11.094 5.24996 11.8125 5.96906 11.8125 6.85413V11.2291C11.8125 12.1154 11.0951 12.8333 10.2085 12.8333H3.79167C2.90602 12.8333 2.1875 12.1142 2.1875 11.2291V6.85413C2.1875 5.9679 2.90485 5.24996 3.79152 5.24996H3.9375ZM4.8125 5.24996H9.1875V4.22913C9.1875 3.02017 8.20852 2.04163 7 2.04163C5.79163 2.04163 4.8125 3.0209 4.8125 4.22913V5.24996ZM3.0625 6.85413V11.2291C3.0625 11.631 3.38946 11.9583 3.79152 11.9583H10.2083C10.3041 11.9584 10.399 11.9396 10.4875 11.903C10.576 11.8664 10.6565 11.8127 10.7242 11.745C10.7919 11.6772 10.8456 11.5968 10.8822 11.5083C10.9188 11.4198 10.9376 11.3249 10.9375 11.2291V6.85413C10.9375 6.45221 10.6105 6.12496 10.2085 6.12496H3.79167C3.69588 6.12484 3.60101 6.14363 3.51249 6.18023C3.42397 6.21683 3.34354 6.27054 3.27581 6.33827C3.20808 6.406 3.15437 6.48643 3.11777 6.57495C3.08117 6.66347 3.06238 6.75834 3.0625 6.85413Z" fill="#666666"/>
+                </svg>
+            `,
+            required: true
+        }
+    ];
+
+    return metaData;
+}
+

@@ -1,0 +1,116 @@
+// components/PrimaryButton.module.scss
+.primaryButton {
+    width: 100%;
+    max-width: 768px;
+    outline: none;
+    border: none;
+    padding: var(--space-4);
+    background: var(--color-button-primary);
+    color: var(--color-text-on-dark);
+    border-radius: 4.6rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    // 正常状态悬停效果
+    &:hover {
+        opacity: 0.8;
+    }
+
+    // 禁用和加载状态
+    &:disabled {
+        cursor: not-allowed;
+        opacity: 0.6;
+    }
+}
+
+.smallButton {
+    @extend .primaryButton;
+    height: 100%;
+    font-size: 1.6rem;
+    border-radius: 0.8rem;
+}
+
+// 假按钮（完全不可点击）
+.fakeButton {
+    @extend .primaryButton;
+    background: var(--color-button-secondary);
+    cursor: not-allowed;
+    opacity: 0.4;
+}
+
+// 旋转动画
+.rotating-spinner {
+    animation: spinerAnimation 0.8s ease-out infinite;
+    margin-left: 1rem;
+}
+
+@keyframes spinerAnimation {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+// 无数据缺省图
+.dataNotFound {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+
+    img {
+        width: 70%;
+        height: auto;
+
+        // PC端适配
+        @media (min-width: 768px) {
+            width: 50%;
+            height: auto;
+        }
+    }
+}
+
+.toast {
+    font-size: 1.4rem;
+    font-weight: bold;
+    border-radius: 0.8rem;
+    padding: 1.2rem 1.6rem;
+    background: white;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    text-align: center;
+
+    &.success {
+        color: var(--color-success);
+        border-left: 4px solid var(--color-success);
+    }
+
+    &.error {
+        color: var(--color-error);
+        border-left: 4px solid var(--color-error);
+    }
+
+    &.warning {
+        color: var(--color-warning);
+        border-left: 4px solid var(--color-warning);
+    }
+
+    &.info {
+        color: var(--color-info);
+        border-left: 4px solid var(--color-info);
+    }
+
+    &.loading {
+        color: var(--color-info);
+        border-left: 4px solid var(--color-info);
+    }
+}

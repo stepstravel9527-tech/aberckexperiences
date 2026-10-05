@@ -1,0 +1,17 @@
+.contentSection {
+    padding: 0rem 2.4rem 2.4rem 2.4rem;
+    font-size: 1.4rem;
+
+    @media (min-width: 768px) {
+        max-width: 1200px;
+        padding: 0rem 4rem 6rem 4rem;
+        font-size: 1.6rem;
+        margin: 0 auto;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+}

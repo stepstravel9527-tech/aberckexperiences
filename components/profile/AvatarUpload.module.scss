@@ -1,0 +1,41 @@
+.avatarUpload {
+    display: flex;
+    justify-content: center;
+}
+
+.avatarContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8.4rem;
+    width: 8.4rem;
+    background: #D1D1D1;
+    border-radius: 50%;
+    border: 2px solid #000;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        height: 12.2rem;
+        width: 12.2rem;
+        border: 3px solid #000;
+    }
+
+    &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    }
+
+    &:active {
+        transform: scale(0.95);
+    }
+}
+
+.defaultImage {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+}

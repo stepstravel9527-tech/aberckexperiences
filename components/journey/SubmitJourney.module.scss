@@ -1,0 +1,445 @@
+.submitJourneySection {
+    position: relative;
+    height: 100vh;
+
+
+    @media (min-width: 768px) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: space-between;
+    }
+}
+
+.productImageHeader {
+    position: relative;
+    z-index: 1;
+
+
+    .productImage {
+        width: 100%;
+        height: 35rem;
+        object-fit: cover;
+        object-position: center;
+
+    }
+
+    @media (min-width: 768px) {
+        flex: 2;
+
+        .productImage {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+
+        }
+    }
+
+    .navigationOverlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+    }
+}
+
+.productInfoContent {
+    position: relative;
+    background-color: white;
+    border-radius: 1.5rem;
+    margin-top: -5.5rem;
+    padding: 3.1rem 2.4rem;
+    z-index: 11;
+
+    @media (min-width: 768px) {
+        display: flex;
+        margin-top: 0rem;
+        padding: 6rem 4rem;
+        flex-direction: column;
+        width: 100%;
+        flex: 1;
+    }
+}
+
+.productName {
+    font-size: 2rem;
+    color: #1B1B1B;
+    font-weight: 600;
+    word-break: break-word;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        font-size: 2.4rem; // 增大产品名称字体
+        line-height: 1.3; // 优化行高
+    }
+}
+
+.productInfoGrid {
+    margin-top: 1.6rem;
+    padding: 1.6rem 0rem 2.4rem 0rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        margin-top: 2rem; // 增加顶部间距
+        padding: 2rem 0rem 3rem 0rem; // 增加内边距
+        gap: 2rem; // 增加行间距
+    }
+}
+
+.priceRow {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0.8rem;
+
+    .key {
+        font-family: Rubik;
+        font-size: 1.4rem;
+        color: #0D0D0D;
+        font-weight: 500;
+        line-height: 140%;
+        letter-spacing: 0.14rem;
+    }
+
+    .value {
+        font-family: Rubik;
+        font-size: 2rem;
+        color: #0D0D0D;
+        font-weight: 400;
+        line-height: 140%;
+        letter-spacing: 0.02rem;
+
+        span {
+            font-size: 1.2rem;
+        }
+    }
+
+    // PC端适配
+    @media (min-width: 768px) {
+        gap: 1rem; // 增加标签和数值间距
+
+        .key {
+            font-size: 1.6rem; // 增大标签字体
+            letter-spacing: 0.16rem; // 调整字间距
+        }
+
+        .value {
+            font-size: 2.4rem; // 增大价格字体
+
+            span {
+                font-size: 1.4rem; // 增大单位字体
+            }
+        }
+    }
+}
+
+.commissionsRow {
+    display: flex;
+    align-items: center;
+    padding: 1.2rem 2rem;
+    gap: 1.6rem;
+    flex: 1 0 0;
+    border-radius: 0.8rem;
+    border: 1px solid rgba(0, 0, 0, 0.80);
+    background: #F8F8F8;
+
+    img {
+        width: 3.2rem;
+        height: 3rem;
+    }
+
+    .key {
+        font-size: 1.6rem;
+        color: #333333;
+        font-weight: 500;
+    }
+
+    .value {
+        width: 100%;
+        text-align: right;
+        font-size: 2rem;
+        color: var(--color-text-primary);
+        font-weight: 500;
+        line-height: 150%;
+
+        span {
+            font-size: 1.6rem;
+        }
+    }
+
+    // PC端适配
+    @media (min-width: 768px) {
+        padding: 1.6rem 2.4rem; // 增加内边距
+        gap: 2rem; // 增加间距
+
+        .key {
+            font-size: 1.8rem; // 增大字体
+        }
+
+        .value {
+            font-size: 2.4rem; // 增大数值字体
+
+            span {
+                font-size: 1.8rem; // 增大单位字体
+            }
+        }
+    }
+}
+
+.ratingSection {
+    border-bottom: 1px solid var(--color-border);
+    padding: 1.6rem 0rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .ratingTitle {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: #444444;
+    }
+
+    ul {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            color: #EAD4B6;
+            font-size: 2rem;
+            margin-right: 0.4rem;
+            cursor: pointer;
+        }
+
+        .active {
+            color: #FF9000;
+        }
+    }
+
+    // PC端适配
+    @media (min-width: 768px) {
+        padding: 2rem 0; // 增加内边距
+
+        .ratingTitle {
+            font-size: 1.8rem; // 增大标题字体
+        }
+
+        ul {
+            li {
+                font-size: 2.4rem; // 增大星星尺寸
+                margin-right: 0.6rem; // 增加星星间距
+            }
+        }
+    }
+}
+
+// 评论
+.commentSection {
+    margin-top: 1.6rem;
+
+    .commentTitle {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: #444444;
+    }
+
+    .commentSelector {
+        width: 100%;
+        color: var(--color-text-tertiary);
+        border: none;
+        padding: 1.2rem 0.4rem;
+        font-size: 1.4rem;
+        font-weight: 400;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    // PC端适配
+    @media (min-width: 768px) {
+        margin-top: 2rem; // 增加顶部间距
+
+        .commentTitle {
+            font-size: 1.8rem; // 增大标题字体
+        }
+
+        .commentSelector {
+            padding: 1.4rem 0.8rem; // 增加内边距
+            font-size: 1.6rem; // 增大字体
+        }
+    }
+}
+
+.reviewsListWrapper {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.722);
+    z-index: 50;
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+
+    // PC端适配
+    @media (min-width: 768px) {
+        justify-content: center; // 居中显示而不是底部弹出
+        background: rgba(0, 0, 0, 0.8); // 加深背景
+
+        .reviewsList {
+            border-radius: 1rem; // 全圆角而不是只有顶部
+            max-height: 80%; // 增加最大高度
+            max-width: 600px; // 限制最大宽度
+        }
+    }
+}
+
+.reviewsList {
+    background: white;
+    border-radius: 1rem 1rem 0 0;
+    padding: 2rem;
+    width: 100%;
+    max-width: 768px;
+    max-height: 70%;
+
+    li {
+        background: #38385f0e;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        margin: 1rem 0;
+        font-size: 1.4rem;
+        font-weight: 600;
+
+        &:hover {
+            background: #38385f1a;
+        }
+    }
+
+    .reviewCloseBtn {
+        padding: 1rem 0 4rem 0rem;
+
+        button {
+            width: 100%;
+            background: var(--color-button-primary);
+            color: #ffffff;
+            border: none;
+            outline: none;
+            padding: 1rem;
+            border-radius: 1rem;
+            font-size: 1.2rem;
+            cursor: pointer;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+
+    // PC端适配
+    @media (min-width: 768px) {
+        padding: 3rem; // 增加内边距
+        max-height: 80%; // 增加最大高度
+
+        li {
+            padding: 1.2rem; // 增加列表项内边距
+            font-size: 1.6rem; // 增大字体
+            margin: 1.2rem 0; // 增加间距
+        }
+
+        .reviewCloseBtn {
+            padding: 2rem 0 0 0; // 调整底部按钮间距
+
+            button {
+                padding: 1.2rem; // 增加按钮内边距
+                font-size: 1.4rem; // 增大按钮字体
+                border-radius: 0.8rem; // 调整圆角
+            }
+        }
+    }
+}
+
+// 动画样式
+.fadeUpAnimation {
+    animation: fadeUp 0.3s ease-out;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.buttonWraper {
+    margin-top: 4rem;
+}
+
+.fetchNextData {
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.807);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 12;
+
+    h3 {
+        color: white;
+        font-size: 1.2rem;
+
+        i {
+            margin-left: 0.5rem;
+            animation: spinerAnimation 0.5s ease-in-out infinite;
+        }
+    }
+}
+
+// @keyframes spinerAnimation {
+//     from {
+//         transform: rotate(0deg);
+//     }
+
+//     to {
+//         transform: rotate(360deg);
+//     }
+// }
+
+.isPressedValidation {
+    height: 5rem;
+    background: #00000038;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+        color: white;
+        text-align: center;
+        font-size: 1.4rem;
+
+        i {
+            margin-left: 0.5rem;
+            animation: spinerAnimation 0.4s ease-in infinite;
+        }
+    }
+}

@@ -1,0 +1,15 @@
+.withdrawalHistorySection {
+    position: relative;
+    // background: linear-gradient(180deg, #FFEDE1 0%, #FFFDFB 100%);
+}
+
+.withdrawalHistoryCardSection {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    @media (min-width: 768px) {
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+}
