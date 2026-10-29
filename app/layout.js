@@ -6,6 +6,7 @@ import AppToaster from '@/components/AppToaster';
 import NextTopLoader from 'nextjs-toploader';
 import LiveSupport from '@/components/support/LiveSupport';
 import { fetchSupport } from '@/app/actions/support/data';
+import { Analytics } from "@vercel/analytics/next"
 
 
 export const metadata = {
@@ -34,6 +35,7 @@ export default async function RootLayout({ children }) {
                 </div>
                 <NextTopLoader />
                 {licenseId && <LiveSupport license={licenseId} />}
+                <Analytics />
             </body>
         </html>
     );
